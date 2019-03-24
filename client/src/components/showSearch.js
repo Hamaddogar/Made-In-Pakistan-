@@ -60,9 +60,7 @@ class SearchShow extends React.Component {
                       <Typography gutterBottom variant="h5" component="h2">
                         {user.productName}
                       </Typography>
-                      <Typography component="p">
-                        {user.Description}
-                      </Typography>
+                     
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
@@ -71,9 +69,9 @@ class SearchShow extends React.Component {
                      Detail
         </Button>
         </Link>
-                    <Button size="small" color="primary">
-                      Learn More
-        </Button>
+        <Typography component="p">
+                       Price  {user.price}
+                      </Typography>
                   </CardActions>
 
                 </Card>
