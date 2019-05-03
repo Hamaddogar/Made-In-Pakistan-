@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var db_url = process.env.DB_URL || 'mongodb://hammad:hammad@cluster0-shard-00-00-mxrsp.mongodb.net:27017,cluster0-shard-00-01-mxrsp.mongodb.net:27017,cluster0-shard-00-02-mxrsp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true'
+var db_url = process.env.DB_URL || 'mongodb://localhost:27017/Made-in-Pakistan'
 
 mongoose.connect(db_url, { useNewUrlParser: true })
 var db = mongoose.connection;

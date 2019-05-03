@@ -1,4 +1,7 @@
-
+let express = require('express');
+let server = express();
+let router = express.Router();
+let User = require('../models/signupSceema')
 //Sign up Root
 server.post("/sign_up_user", (req, res) => {
 
@@ -12,3 +15,4 @@ server.post("/sign_up_user", (req, res) => {
     });
   
   })
+  module.exports = router;

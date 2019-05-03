@@ -17,6 +17,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 
 const styles = theme => ({
 
@@ -128,6 +131,7 @@ class Login extends React.Component {
     state = {
         email: '',
         showPassword: false,
+        invalidPasswordMsg :'',
         user: {
             password: '',
 
@@ -180,7 +184,19 @@ class Login extends React.Component {
 
                 }
                 else{             
-                    this.props.history.push("/") ;
+                 this.setState({
+                    invalidPasswordMsg:'invalid UserName/Password Pair'
+
+                 })
+                 {
+                    Alert.error(`${this.state.invalidPasswordMsg}`, {
+                        position: 'top',
+                        effect: 'slide',
+                     
+                    })
+                       
+                   }
+                   
 
                 }
                 
@@ -278,8 +294,18 @@ class Login extends React.Component {
                     </CardContent>
 
                 </Card>
+                <div>
+                <span>
+             
+                </span>
+                <Alert stack={{limit: 1}} />
+            </div>
 
             </div>
+           
+ 
+
+
 
         )
     }

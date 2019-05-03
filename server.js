@@ -259,7 +259,13 @@ server.get("/agricultureandFoodshow", (req, res) => {
 
     UserForgot.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function (err, user) {
       if (user) {
-        User.findOneAndUpdate({ email: user.email }, { password: req.body.password }, function (err, user) {
+        var password = req.body.password
+        bcrypt.hash(password, null, null, function(err, hash) {
+          req.body.password = hash
+    
+          
+          
+        User.findOneAndUpdate({ email: user.email }, req.body, function (err, user) {
 
           if (user) {
 
@@ -271,6 +277,8 @@ server.get("/agricultureandFoodshow", (req, res) => {
           }
 
         })
+        
+      });
       }
 
     });

@@ -19,7 +19,7 @@ import showsearchCatigories from '../src/components/showSearch';
 import store from '../src/store/redux';
 import Header from "../src/components/Header";
 import About from '../src/components/About'
-
+import location  from '../src/components/location';
 class App extends Component {
   render() {
     return (
@@ -30,6 +30,9 @@ class App extends Component {
           <div>
 
             <Route exact path="/" component={Home} />
+            <Route exact path="/location" component={location} />
+
+
             <Route path="/searchcatigoriess" component={searchcatigories} />
             <Route path="/About" component={About} />
             <Route path="/Signup" component={signup} />

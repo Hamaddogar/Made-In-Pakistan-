@@ -37,12 +37,16 @@ userSchema.pre('save', function(next) {
     });
   });
 });
+
+
+
+
 userSchema.methods.verifyPassword = function(password, cb) {
   bcrypt.compare(password, this.password, function(err, isVaild) {
     if (err) return cb(err);
     cb(null, isVaild);
   });
 };
-const User = mongoose.model( 'User', userSchema );
+const User = mongoose.model( ' SignUp', userSchema );
 
 module.exports = User;
